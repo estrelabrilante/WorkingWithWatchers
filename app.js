@@ -6,7 +6,7 @@ const app = Vue.createApp({
       // name property with every key stroke.
       name: "",
       lastName: "",
-      fullName: "",
+      //   fullName: "",
     };
   },
   //Alternative to computed properties
@@ -16,30 +16,30 @@ const app = Vue.createApp({
     // name() {
     //   this.fullName = this.name + "" + "Varghese";
     // },
-    name(value) {
-      if (value === "") {
-        this.fullName = "";
-      } else {
-        this.fullName = value + "" + this.lastName;
-      }
-    },
-    lastName(value) {
-      if (value === "") {
-        this.fullName = "";
-      } else {
-        // this.fullName = value + " " + this.name;
-        this.fullName = this.name + " " + value;
-      }
-    },
+    // name(value) {
+    //   if (value === "") {
+    //     this.fullName = "";
+    //   } else {
+    //     this.fullName = value + "" + this.lastName;
+    //   }
+    // },
+    // lastName(value) {
+    //   if (value === "") {
+    //     this.fullName = "";
+    //   } else {
+    //     // this.fullName = value + " " + this.name;
+    //     this.fullName = this.name + " " + value;
+    //   }
+    // },
   },
   computed: {
-    // fullName() {
-    //   console.log("Running again...");
-    //   if (this.name === "") {
-    //     return "";
-    //   }
-    //   return this.name + " " + "Varghese";
-    // },
+    fullName() {
+      console.log("Running again...");
+      if (this.name === "" || this.lastName === "") {
+        return "";
+      }
+      return this.name + " " + this.lastName;
+    },
   },
   methods: {
     outputFullName() {
