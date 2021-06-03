@@ -23,9 +23,10 @@
       <button v-on:click.right=" decrement(5)">Remove by 5</button>
       <p v-once>Starting Counter: {{counter}}</p>
       <p>Result: {{ counter }}</p>
-      <!-- $event is a reserved name -->
       <!-- <input type="text" v-bind:value="name" v-on:input="setName($event)" /> -->
+      <!-- Two changes in the application as per user input : name and lastName -->
       <input type="text" v-model="name" />
+      <input type="text" v-model="lastName" />
       <button v-on:click="resetInput">Reset Button</button>
       <!-- <p>Your Name: {{ outputFullName() }}</p> -->
       <!-- <p>Your Name: {{name + ' ' + 'Varghese'}}</p> -->

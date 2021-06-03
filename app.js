@@ -5,10 +5,12 @@ const app = Vue.createApp({
       counter: 0,
       // name property with every key stroke.
       name: "",
+      lastName: "",
       fullName: "",
     };
   },
   //Alternative to computed properties
+  //Two watch method since there is two changes
   watch: {
     //whenever name changes
     // name() {
@@ -18,7 +20,14 @@ const app = Vue.createApp({
       if (value === "") {
         this.fullName = "";
       } else {
-        this.fullName = value + "" + "Varghese";
+        this.fullName = value + "" + this.lastName;
+      }
+    },
+    lastName(value) {
+      if (value === "") {
+        this.fullName = "";
+      } else {
+        this.fullName = value + "" + this.name;
       }
     },
   },
