@@ -12,6 +12,11 @@ const app = Vue.createApp({
   //Alternative to computed properties
   //Two watch method since there is two changes
   watch: {
+    counter(value) {
+      if (value > 50) {
+        this.counter = 0;
+      }
+    },
     //whenever name changes
     // name() {
     //   this.fullName = this.name + "" + "Varghese";
