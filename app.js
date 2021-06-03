@@ -27,7 +27,8 @@ const app = Vue.createApp({
       if (value === "") {
         this.fullName = "";
       } else {
-        this.fullName = value + "" + this.name;
+        // this.fullName = value + " " + this.name;
+        this.fullName = this.name + " " + value;
       }
     },
   },
